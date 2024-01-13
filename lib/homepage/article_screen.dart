@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ArticleScreen extends StatefulWidget {
-  const ArticleScreen({Key? key}) : super(key: key);
+  const ArticleScreen({super.key});
 
   @override
   _ArticleScreenState createState() => _ArticleScreenState();
@@ -17,15 +17,15 @@ class _ArticleScreenState extends State<ArticleScreen> {
         stream: FirebaseFirestore.instance.collection('articles').snapshots(),
         builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
           if (snapshot.hasError) {
-            return Center(
+            return const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(
                     Icons.bug_report,
                     size: 50,
@@ -45,7 +45,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                     builder: (context, orientation) {
                       return Container(
                         width: orientation == Orientation.portrait ? null : 500,
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 12.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -62,24 +62,24 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                             ),
                             ExpansionTile(
-                              tilePadding: EdgeInsets.symmetric(
+                              tilePadding: const EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 18),
-                              childrenPadding: EdgeInsets.symmetric(
+                              childrenPadding: const EdgeInsets.symmetric(
                                   horizontal: 8.0, vertical: 18),
                               title: Text(
                                 snapshot.data!.docs[index]['headline'],
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                               ),
                               children: [
                                 Text(
                                   snapshot.data!.docs[index]['description'],
-                                  style: TextStyle(fontSize: 15),
+                                  style: const TextStyle(fontSize: 15),
                                 )
                               ],
                             ),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
+                              children: [
                                 ClipRRect(
                                   child: FlutterLogo(
                                     size: 25,
@@ -107,8 +107,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                 )
                               ],
                             ),
-                            SizedBox(height: 5),
-                            Divider(thickness: 1),
+                            const SizedBox(height: 5),
+                            const Divider(thickness: 1),
                           ],
                         ),
                       );

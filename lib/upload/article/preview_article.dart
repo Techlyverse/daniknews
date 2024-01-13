@@ -94,7 +94,7 @@ class _PreviewArticleState extends State<PreviewArticle> {
                                       Text(
                                         'Add image of news',
                                         style: TextStyle(
-                                            fontSize: 18, color: reddish),
+                                            fontSize: 18, color: Colors.red),
                                       )
                                     ],
                                   ),
@@ -164,7 +164,7 @@ class _PreviewArticleState extends State<PreviewArticle> {
                                 Text(
                                   'Add image of news',
                                   style:
-                                      TextStyle(fontSize: 18, color: reddish),
+                                      TextStyle(fontSize: 18, color: Colors.red),
                                 )
                               ],
                             ),
@@ -287,7 +287,7 @@ class _PreviewArticleState extends State<PreviewArticle> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text("please add image to continue"),
-                              backgroundColor: reddish,
+                              backgroundColor: Colors.red,
                             ),
                           );
                         }

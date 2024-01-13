@@ -1,9 +1,8 @@
 import 'package:daniknews/auth/login_page.dart';
-import 'package:daniknews/main.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -38,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
-                          color: reddish)),
+                          color: Colors.red)),
                   const Expanded(
                     flex: 1,
                     child: SizedBox(height: 50),
@@ -47,10 +46,6 @@ class _LoginPageState extends State<LoginPage> {
                     width: 300,
                     height: 60,
                     child: ElevatedButton(
-                      child: const Text(
-                        "Get Started",
-                        style: TextStyle(fontSize: 16),
-                      ),
                       style: ElevatedButton.styleFrom(
                         onPrimary: Colors.white,
                         shape: RoundedRectangleBorder(
@@ -71,6 +66,10 @@ class _LoginPageState extends State<LoginPage> {
                               );
                             });
                       },
+                      child: const Text(
+                        "Get Started",
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 60),

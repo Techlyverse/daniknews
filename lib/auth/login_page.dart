@@ -1,14 +1,12 @@
 import 'package:daniknews/auth/select_category_page.dart';
 import 'package:daniknews/services/firebase_api.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../login_error.dart';
-import '../main.dart';
 
 class UserAgreement extends StatefulWidget {
-  const UserAgreement({Key? key}) : super(key: key);
+  const UserAgreement({super.key});
 
   @override
   _UserAgreementState createState() => _UserAgreementState();
@@ -26,9 +24,9 @@ class _UserAgreementState extends State<UserAgreement> {
         MaterialState.focused,
       };
       if (states.any(interactiveStates.contains)) {
-        return reddish;
+        return Colors.red;
       }
-      return reddish;
+      return Colors.red;
     }
 
     return Scaffold(
@@ -71,13 +69,13 @@ class _UserAgreementState extends State<UserAgreement> {
                   TextSpan(
                     text: 'Terms of Service',
                     style: const TextStyle(
-                      color: reddish,
+                      color: Colors.red,
                       fontWeight: FontWeight.w500,
                       fontSize: 15,
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        launch('https://daniknews.com/#/');
+                        launchUrlString('https://daniknews.com/#/');
                       },
                   ),
                   const TextSpan(
@@ -91,13 +89,13 @@ class _UserAgreementState extends State<UserAgreement> {
                   TextSpan(
                     text: 'Privacy Policy',
                     style: const TextStyle(
-                      color: reddish,
+                      color: Colors.red,
                       fontWeight: FontWeight.w500,
                       fontSize: 15,
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        launch('https://daniknews.com/#/');
+                        launchUrlString('https://daniknews.com/#/');
                       },
                   ),
                 ],
@@ -158,16 +156,15 @@ class _UserAgreementState extends State<UserAgreement> {
                         }
                       : null,
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: reddish,
+                    foregroundColor: Colors.red, backgroundColor: Colors.white,
                     padding: const EdgeInsets.only(right: 40),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       CircleAvatar(
                         radius: 30,
                         backgroundImage: AssetImage('assets/google.png'),
@@ -190,7 +187,7 @@ class _UserAgreementState extends State<UserAgreement> {
 
   // buildSnackBar(BuildContext context) {
   //   final SnackBar snackBar = SnackBar(
-  //     backgroundColor: reddish,
+  //     backgroundColor: Colors.red,
   //     padding: const EdgeInsets.all(8.0),
   //     content: Row(
   //       mainAxisAlignment: MainAxisAlignment.center,

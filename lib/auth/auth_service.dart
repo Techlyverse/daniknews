@@ -1,17 +1,23 @@
-import 'package:daniknews/auth/select_category_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:daniknews/homepage/homepage.dart';
+import 'package:daniknews/auth/splash_screen.dart';
 import 'package:daniknews/auth/welcome_page.dart';
+import 'package:daniknews/homepage/homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class AuthService {
-  isLoggedIn() {
-    if (_auth.currentUser != null) {
-      return const Homepage();
-    } else {
-      return SelectCategories();
-    }
+class AuthService extends StatelessWidget {
+  const AuthService({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), builder: (context, snapshot){
+      if(snapshot.connectionState == ConnectionState.waiting){return const SplashScreen();}
+      else if(snapshot.data != null){
+        return const Homepage();
+      }
+      else{
+        return const LoginPage();
+      }
+    });
   }
 }

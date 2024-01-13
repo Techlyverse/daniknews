@@ -1,11 +1,9 @@
 import 'package:daniknews/homepage/homepage.dart';
-import 'package:daniknews/main.dart';
 import 'package:daniknews/upload/article/preview_article.dart';
 import 'package:flutter/material.dart';
 
 class WriteArticlePage extends StatefulWidget {
-  const WriteArticlePage({Key? key, required this.desc, required this.head})
-      : super(key: key);
+  const WriteArticlePage({super.key, required this.desc, required this.head});
   final String? head;
   final String? desc;
 
@@ -29,17 +27,17 @@ class _WriteArticlePageState extends State<WriteArticlePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('write article'),
+          title: const Text('write article'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Homepage()),
+                    MaterialPageRoute(builder: (context) => const Homepage()),
                     (Route<dynamic> route) => false);
               },
-              child: Text("cancel"),
-              style: TextButton.styleFrom(primary: Colors.white),
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              child: const Text("cancel"),
             ),
             TextButton(
               onPressed: () {
@@ -57,15 +55,15 @@ class _WriteArticlePageState extends State<WriteArticlePage> {
                       (Route<dynamic> route) => false);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: reddish,
+                    const SnackBar(
+                      backgroundColor: Colors.red,
                       content: Text('headline can not be empty'),
                     ),
                   );
                 }
               },
-              child: Text("done"),
-              style: TextButton.styleFrom(primary: Colors.white),
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              child: const Text("done"),
             )
           ],
         ),
@@ -81,9 +79,9 @@ class _WriteArticlePageState extends State<WriteArticlePage> {
                   maxLength: 90,
                   controller: headline,
                   keyboardType: TextInputType.multiline,
-                  scrollPhysics: NeverScrollableScrollPhysics(),
-                  style: TextStyle(fontSize: 22),
-                  decoration: InputDecoration(
+                  scrollPhysics: const NeverScrollableScrollPhysics(),
+                  style: const TextStyle(fontSize: 22),
+                  decoration: const InputDecoration(
                     hintText: "Headline",
                     border: InputBorder.none,
                   ),
@@ -92,14 +90,14 @@ class _WriteArticlePageState extends State<WriteArticlePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  scrollPhysics: NeverScrollableScrollPhysics(),
+                  scrollPhysics: const NeverScrollableScrollPhysics(),
                   minLines: 1,
                   maxLines: 40,
                   maxLength: 1500,
                   controller: description,
                   keyboardType: TextInputType.multiline,
-                  style: TextStyle(fontSize: 16),
-                  decoration: InputDecoration(
+                  style: const TextStyle(fontSize: 16),
+                  decoration: const InputDecoration(
                       hintText: "Description", border: InputBorder.none),
                 ),
               )
