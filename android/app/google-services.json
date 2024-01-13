@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1039697642740",
+    "firebase_url": "https://daniknews-default-rtdb.firebaseio.com",
+    "project_id": "daniknews",
+    "storage_bucket": "daniknews.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039697642740:android:cb60e93616abbc1ee40aa1",
+        "android_client_info": {
+          "package_name": "com.daniknews.daniknews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039697642740-7q8qir99o7i7dgd2jhc0q1ief03cbd9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.daniknews.daniknews",
+            "certificate_hash": "886c9cc3315bd6a59dde87585e106b43737aac0a"
+          }
+        },
+        {
+          "client_id": "1039697642740-l0es0lecbq8q4defge32qg2tvf6ccedh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPWH8R7T2yJxhW720-9q7LHS1aTunCAok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039697642740-l0es0lecbq8q4defge32qg2tvf6ccedh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1039697642740-30gr3v5n0v03bdh2pfaajm539ji0ao8u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.daniknews.daniknews"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
